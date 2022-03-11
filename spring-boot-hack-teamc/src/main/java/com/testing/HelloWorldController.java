@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,7 +47,8 @@ public class HelloWorldController {
     public Map<String, String> helloWorld() throws UnknownHostException {
         return getResponse();
     }
-
+    
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/ciao", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String ciao()
     {
